@@ -24,7 +24,7 @@ Call Notifly anywhere using $.notifly() like this:
 
 ##Example
 
-[Main example](jordan-adams.co.uk/notifly)
+[Main example](http://jordan-adams.co.uk/notifly)
 
 ##Settings
 
