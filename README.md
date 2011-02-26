@@ -36,6 +36,21 @@ Call Notifly anywhere using $.notifly() like this:
 
 **inout** - How long the notification takes to fade in and out.
 
+##Planned Updates
+
+* Addition of a top notification.
+* Selection of which corner to show notification.
+* Option to slide the notification into view.
+* Option to link the notification to a url.
+* Optional close button on hover.
+* Pause the delay when hovered over.
+* Option for colour scheme.
+* Option for width.
+
 ##Issues
+
+**Known Issues:**
+
+* Notification doesn't stick when scrolling.
 
 Please report any issues you have with this plugin to me.
