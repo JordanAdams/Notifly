@@ -44,7 +44,8 @@ Call Notifly anywhere using $.notifly() like this:
 * Addition of a top notification.
 * Selection of which corner to show notification.
 * Option to slide the notification into view.
-* Option to link the notification to a url.
+* A click event callback.
+* A destroy method.
 * Optional close button on hover.
 * Pause the delay when hovered over.
 * Option for colour scheme.
