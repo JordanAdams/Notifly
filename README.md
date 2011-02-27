@@ -8,6 +8,9 @@ Include the css and javascript files in your &lt;head&gt; like so:
 
 	<head>
 		<link href="jquery.notifly.css" type="text/css" rel="stylesheet" />
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+
 		<script src="jquery.notifly.js" type="text/javascript"></script>
 	</head>
 
@@ -22,6 +25,10 @@ Call Notifly anywhere using $.notifly() like this:
 
     });
 
+##Example
+
+[Main example](http://jordan-adams.co.uk/notifly)
+
 ##Settings
 
 **header** - The title of the notification.
@@ -32,6 +39,27 @@ Call Notifly anywhere using $.notifly() like this:
 
 **inout** - How long the notification takes to fade in and out.
 
+##Planned Updates
+
+* Addition of a top notification.
+* Selection of which corner to show notification.
+* Option to slide the notification into view.
+* A click event callback.
+* A destroy method.
+* Optional close button on hover.
+* Pause the delay when hovered over.
+* Option for colour scheme.
+* Option for width.
+
 ##Issues
 
+**Known Issues:**
+
+* None currently.
+
 Please report any issues you have with this plugin to me.
+
+##Changelog
+
+* **1.0** - First release.
+* **1.0.1** - [Bug Fix] Nofications now stick when scrolling.
