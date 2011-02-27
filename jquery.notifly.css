@@ -6,7 +6,7 @@
 	border: solid 1px #F57393;
 	font-weight: 10pt;
 	margin: 0 auto;
-	position: absolute;
+	position: fixed;
 	bottom: 20px;
 	right: 20px;
 	box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
