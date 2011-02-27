@@ -25,8 +25,11 @@ Call Notifly anywhere using $.notifly() like this:
 ##Settings
 
 **header** - The title of the notification.
+
 **content** - The body of the notification.
+
 **delay** - How long the notification shows for.
+
 **inout** - How long the notification takes to fade in and out.
 
 ##Issues
