@@ -55,11 +55,6 @@ Call Notifly anywhere using $.notifly() like this:
 
 **Known Issues:**
 
-* None currently.
+* Notification doesn't stick when scrolling.
 
 Please report any issues you have with this plugin to me.
-
-##Changelog
-
-* **1.0** - First release.
-* **1.0.1** - [Bug Fix] Nofications now stick when scrolling.
