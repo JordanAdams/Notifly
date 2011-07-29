@@ -15,8 +15,6 @@
 	font-weight: 10pt;
 	margin: 0 auto;
 	position: fixed;
-	bottom: 20px;
-	right: 20px;
 	box-shadow: inset 0px -2px 7px rgba(0, 0, 0, 0.15),
 		0px 1px 10px rgba(0, 0, 0, 0.25);
 	display: none;
