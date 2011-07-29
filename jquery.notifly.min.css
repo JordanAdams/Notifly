@@ -1,1 +1,9 @@
+/*
+ * jQuery Notifly - v1.0
+ * Copyright (c) 2011 Jordan Adams
+ * Licensed under the MIT license.
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+*/
+
  .notifly.corner{width:200px;border-radius:3px;-moz-border-radius:3px;background:#FFF;border: solid 1px #888;font-weight:10pt;margin:0 auto;position:fixed;bottom:20px;right:20px;box-shadow: inset 0px -2px 7px rgba(0,0,0,0.15),0px 1px 10px rgba(0,0,0,0.25);display: none;font:10pt arial;color:#777;padding:10px;}.notifly.corner .notiflyHeader{font-weight:bold;color:#555;font-size:105%;padding-bottom:5px;border-bottom:dashed 1px #ddd;}.notifly.corner .notiflyContent{padding-top:5px;}
