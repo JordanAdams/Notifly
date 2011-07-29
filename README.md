@@ -1,20 +1,19 @@
 #Notifly
 
-Notifly is a small plugin for jQuery which allows the quick display of customised notifications.
+Notifly is a simple plugin for jQuery which allows the quick display of on-the-fly notifications.
 
 ##Usage
 
-Include the css and javascript files in your &lt;head&gt; like so:
+Include the css and javascript files in the &lt;head&gt;
 
 	<head>
 		<link href="jquery.notifly.css" type="text/css" rel="stylesheet" />
 
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
-
+		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="jquery.notifly.js" type="text/javascript"></script>
 	</head>
 
-Call Notifly anywhere using $.notifly() like this:
+Call Notifly anywhere using $.notifly()
 
     $("#someLink").click(function() {
 
@@ -41,25 +40,26 @@ Call Notifly anywhere using $.notifly() like this:
 
 ##Planned Updates
 
+* Notification stacking.
 * Addition of a top notification.
 * Selection of which corner to show notification.
 * Option to slide the notification into view.
-* A click event callback. [Added but unreleased]
+* A click event callback.
 * A destroy method.
 * Optional close button on hover.
-* Pause the delay when hovered over.
-* Option for colour scheme.
-* Option for width.
+* Pause delay when hovered over.
+* Constant notifications (no fadeout).
 
 ##Issues
 
 **Known Issues:**
 
-* None currently.
+* None yet.
 
-Please report any issues you have with this plugin to me.
+Please report any issues using github's issue system.
 
 ##Changelog
 
 * **1.0** - First release
 * **1.0.1** - [Bug Fix] Notifications didn't stick when scrolling.
+* **1.0.2** - Fresh new design
