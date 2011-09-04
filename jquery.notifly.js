@@ -8,85 +8,118 @@
 
 (function($){
 
+	//Default settings
+	var defaults = {
+		
+		'header'  : '',
+		'content' : '',
+		'delay'   : 2000,
+		'inout'   : 500,
+		'corner'	: 'br',
+		'type'		: 'corner',
+		
+	};
+
 	$.notifly = function(options) {
+		
+		//Merge Options and Settings
+		var settings = $.extend({}, defaults, options);
 
-		//Default settings
-		var settings = {
+
+		// Add notification to DOM
+		$('body').append('<div class="notifly"></div>');
+
+
+		// Apply relevant type
+		if (settings.type === 'corner') { 
+
+			$('.notifly').addClass('corner');
+
+		} else if (settings.type === 'top') {
 			
-			"header"  : "",
-			"content" : "",
-			"delay"   : 2000,
-			"inout"   : 500,
-			"corner"	: "br",
+			$('.notifly').addClass('top')
+
+		} //apply type
+
+
+		// Set corner
+		if (settings.type === 'corner') {
+			switch(settings.corner) {
+				
+				case 'tl': 
+					$('.notifly').css('top', '20px');
+					$('.notifly').css('left', '20px');
+					break;
+
+				case 'tr': 
+					$('.notifly').css('top', '20px');
+					$('.notifly').css('right', '20px');
+					break;
+
+				case 'bl': 
+					$('.notifly').css('bottom', '20px');
+					$('.notifly').css('left', '20px');
+					break;
+
+				case 'br': 
+					$('.notifly').css('bottom', '20px');
+					$('.notifly').css('right', '20px');
+					break;
+
+				default:
+					console.error(settings.corner + 'is invalid. Expected "tl", "tr", "bl" or "br"')
+					break;
+
+			}
+		} //set corner
+
+
+		// Populate notification
+		if (settings.type === 'corner') {
+
+			if (settings.header) {
+				$('.notifly').append('<div class="notiflyHeader">' + settings.header + '</div>');
+			}
+
+			$('.notifly').append('<div class="notiflyContent">' + settings.content + '</div>');
+
+		} else if (settings.type === 'top') {
 			
+			$('.notifly').append('<b>' + settings.header + ': </b>' + settings.content)
+			
+		} //populate
+
+
+		// Display it
+		if (settings.type === 'corner') {
+
+			$('.notifly').fadeIn(settings.inout);
+
+		} else if (settings.type === 'top') {
+
+			$('.notifly').slideDown(settings.inout);
+
 		}
+
+
+		// Delay it
+		$('.notifly').delay(settings.delay);
 		
-		//If options is set...
-		if(options) {
-			
-			//Merge it with settings
-			$.extend(settings, options);
-			
-		}
-			
-		//Add Notifly Div
-		$("body").append(
-			'<div class="notifly">' +
-				'<div class="notiflyHeader"></div>' +
-				'<div class="notiflyContent"></div>' +
-			'</div>'
-		);
-			
-		//Assign the default "corner" class
-		$(".notifly").addClass("corner");
-		
-		//Set Corner {default => br}
-		switch(settings.corner) {
-			
-			case 'tl': 
-				$('.notifly').css("top", "20px");
-				$('.notifly').css("left", "20px");
-				break;
 
-			case 'tr': 
-				$('.notifly').css("top", "20px");
-				$('.notifly').css("right", "20px");
-				break;
+		// Kill it
+		if (settings.type === 'corner') {
 
-			case 'bl': 
-				$('.notifly').css("bottom", "20px");
-				$('.notifly').css("left", "20px");
-				break;
+			$('.notifly').fadeOut(settings.inout, function() {
+				$('.notifly').detach();
+			});
 
-			case 'br': 
-				$('.notifly').css("bottom", "20px");
-				$('.notifly').css("right", "20px");
-				break;
-
-			default:
-				console.error(settings.corner + 'is invalid. Expected "tl", "tr", "bl" or "br"')
-				break;
+		} else if (settings.type === 'top') {
+			
+			$('.notifly').slideUp(settings.inout, function() {
+				$('.notifly').detach();
+			});		
 
 		}
-			
-		//Apply header to .notiflyHeader
-		$(".notiflyHeader").html(settings.header);
-		
-		//Apply content to .notiflyContent
-		$(".notiflyContent").html(settings.content);
-		
-		//fadeIn notifly (inout determines length)
-		$(".notifly").fadeIn(settings.inout);
-		
-		//Delay notifly (delay determines length)
-		$(".notifly").delay(settings.delay);
-		
-		//fadeOut notifly (inout determines length)
-		$(".notifly").fadeOut(settings.inout, function() {
-			
-			$(".notifly").detach();
-			
-		});
 			
 	};
 
