@@ -18,9 +18,21 @@
 				$('#notifly_std').click(function() {
 					
 					$.notifly({
-						'header'	: 'Header',
-						'content'	: 'Some demo content ♥',
+						header	: 'Header',
+						content	: 'Some demo content ♥',
 					});
+
+				});
+
+				$('#notifly_top').click(function() {
+					
+					$.notifly({
+						type		: 'top', 
+						header	: 'Up here',
+						content	: 'This is an example of the top notification type',
+						inout		: 250,
+						delay		: 3000,
+					})
 
 				});
 
@@ -37,8 +49,21 @@
 			<button id="notifly_std">Try it</button>
 
 			<pre>$.notifly({
-  'header'  : 'Header',
-  'content' : 'Some demo content ♥'
+  header  : 'Header',
+  content : 'Some demo content ♥'
+});		</pre>
+		</article>
+
+		<article>
+			<h2>Top</h2>
+			<button id="notifly_top">Try it</button>
+
+			<pre>$.notifly({
+	type		: 'top',
+	header	: 'Up here',
+	content	: 'This is an example of the top notification type',
+	inout		: 250,
+	delay		: 3000,
 });		</pre>
 		</article>
 
