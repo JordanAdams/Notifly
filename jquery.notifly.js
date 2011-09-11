@@ -1,27 +1,42 @@
-/*
- * jQuery Notifly - v1.0
- * Copyright (c) 2011 Jordan Adams
- * Licensed under the MIT license.
- *   http://www.opensource.org/licenses/mit-license.php
- *
-*/
-
 (function($){
 
-	//Default settings
-	var defaults = {
-		
-		'header'  		: '',
-		'content' 		: '',
-		'delay'   		: 2000,
-		'inout'   		: 500,
-		'corner'			: 'br',
-		'type'				: 'corner',
-		'hoverPause'	: true,
-		
-	};
-
 	$.notifly = function(options) {
+
+		//Default settings
+		var defaults = {
+			
+			'header'  		: '',
+			'content' 		: '',
+			'delay'   		: 2000,
+			'inout'   		: 500,
+			'corner'			: 'br',
+			'type'				: 'corner',
+			'hoverPause'	: true,
+			
+		};
+
+		// Helper methods
+		var methods = {
+			
+			destroy : function() {
+
+				if (settings.type === 'corner') {
+
+					$('.notifly').fadeOut(settings.inout, function() {
+						$('.notifly').detach();
+					});
+
+				} else if (settings.type === 'top') {
+					
+					$('.notifly').slideUp(settings.inout, function() {
+						$('.notifly').detach();
+					});		
+
+				}
+
+			},
+
+		};
 		
 		//Merge Options and Settings
 		var settings = $.extend({}, defaults, options);
@@ -40,23 +55,13 @@
 
 			}, function() {
 				
-				if (settings.type === 'corner') {
-
-					$('.notifly').delay(1000).fadeOut(settings.inout, function() {
-						$('.notifly').detach();
-					});
-
-				} else if (settings.type === 'top') {
-					
-					$('.notifly').delay(1000).slideUp(settings.inout, function() {
-						$('.notifly').detach();
-					});		
-
-				}
+				setTimeout(function() {
+					methods.destroy();
+				}, 1000);
 
 			});
 
-		}
+		} //hover
 
 
 		// Apply relevant type
@@ -136,19 +141,7 @@
 		
 
 		// Kill it
-		if (settings.type === 'corner') {
-
-			$('.notifly').fadeOut(settings.inout, function() {
-				$('.notifly').detach();
-			});
-
-		} else if (settings.type === 'top') {
-			
-			$('.notifly').slideUp(settings.inout, function() {
-				$('.notifly').detach();
-			});		
-
-		}
+		methods.destroy();
 			
 	};
 
