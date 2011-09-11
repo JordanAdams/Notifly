@@ -11,12 +11,13 @@
 	//Default settings
 	var defaults = {
 		
-		'header'  : '',
-		'content' : '',
-		'delay'   : 2000,
-		'inout'   : 500,
-		'corner'	: 'br',
-		'type'		: 'corner',
+		'header'  		: '',
+		'content' 		: '',
+		'delay'   		: 2000,
+		'inout'   		: 500,
+		'corner'			: 'br',
+		'type'				: 'corner',
+		'hoverPause'	: true,
 		
 	};
 
@@ -28,6 +29,34 @@
 
 		// Add notification to DOM
 		$('body').append('<div class="notifly"></div>');
+
+		
+		// Bind hover event
+		if (settings.hoverPause) {
+
+			$('.notifly').hover(function() {
+
+				$(this).clearQueue();
+
+			}, function() {
+				
+				if (settings.type === 'corner') {
+
+					$('.notifly').delay(1000).fadeOut(settings.inout, function() {
+						$('.notifly').detach();
+					});
+
+				} else if (settings.type === 'top') {
+					
+					$('.notifly').delay(1000).slideUp(settings.inout, function() {
+						$('.notifly').detach();
+					});		
+
+				}
+
+			});
+
+		}
 
 
 		// Apply relevant type

@@ -42,6 +42,8 @@ Call Notifly anywhere using $.notifly()
 
 **corner** - Which corner to show the notification in. Accepts 'tl', 'tr', 'bl', 'br' and defaults to 'br'.
 
+**hoverPause** - Pauses the notification when the user hovers over it. The notification then closes 1 second after the user moves their cursor off of the notification.
+
 ##Issues
 
 Please report any issues using one of the following
